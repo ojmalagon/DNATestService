@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.ws.rs.core.Response;
 
 import co.com.dnatest.service.implementation.DNATestService;
-import co.com.dnatest.service.vo.DNASequenceVO;
+import co.com.dnatest.service.model.DNASequence;
 
 @RestController
 public class DNASequenceController {
@@ -21,12 +21,14 @@ public class DNASequenceController {
 	private DNATestService dnaTestService;
 	
 	@PostMapping("/isMutant")
-	public ResponseEntity isMutant(@RequestBody DNASequenceVO obj) {
+	public ResponseEntity isMutant(@RequestBody DNASequence obj) {
 		try {
 			
-			//dnaTestService.isMutant(dna);
+			if(dnaTestService.isMutant(obj.getDNA())) {
+				return new ResponseEntity<>(HttpStatus.OK);
+			}
 			
-			return new ResponseEntity<>(HttpStatus.OK);//obj.getDna();
+			return new ResponseEntity<>(HttpStatus.FORBIDDEN);
 		} catch (Exception e) {
 			return null;
 		}
