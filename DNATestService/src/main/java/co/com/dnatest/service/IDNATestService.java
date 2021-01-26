@@ -8,7 +8,9 @@ public interface IDNATestService {
 
 	Boolean isMutant(String[] dna);
 	
-	DNASequence create(String[] dnaSequence, Boolean isMutant);
+	DNASequence create(String[] dna, Boolean isMutant);
 	
 	List<DNASequence> getAll();
+	
+	DNASequence getByDna(String[] dna);
 }

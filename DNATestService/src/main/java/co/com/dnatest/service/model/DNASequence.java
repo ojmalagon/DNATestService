@@ -14,9 +14,9 @@ public class DNASequence {
 	private String[] dna;
 	private Boolean isMutant;
 
-	public DNASequence(String[] dNASecuence, Boolean isMutant) {
+	public DNASequence(String[] dna, Boolean isMutant) {
 		super();
-		dna = dNASecuence;
+		this.dna = dna;
 		this.isMutant = isMutant;
 	}
 
@@ -27,8 +27,8 @@ public class DNASequence {
 	}
 
 
-	public void setDNA(String[] dNASecuence) {
-		dna = dNASecuence;
+	public void setDNA(String[] dna) {
+		this.dna = dna;
 	}
 
 

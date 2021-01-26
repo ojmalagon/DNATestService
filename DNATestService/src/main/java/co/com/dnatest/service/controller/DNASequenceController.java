@@ -23,10 +23,20 @@ public class DNASequenceController {
 	@PostMapping("/isMutant")
 	public ResponseEntity isMutant(@RequestBody DNASequence obj) {
 		try {
-			
+			Boolean result=false;
 			if(dnaTestService.isMutant(obj.getDNA())) {
-				return new ResponseEntity<>(HttpStatus.OK);
+				result=true;
+				
 			}
+			
+			obj.setIsMutant(result);
+			if(dnaTestService.getByDna(obj.getDNA())==null) {//Se valida para registrar solo una vez la secuencia de ADN evaluada.
+				dnaTestService.create(obj.getDNA(), obj.getIsMutant());
+			}
+			
+			if(result) {
+				return new ResponseEntity<>(HttpStatus.OK);
+			}			
 			
 			return new ResponseEntity<>(HttpStatus.FORBIDDEN);
 		} catch (Exception e) {

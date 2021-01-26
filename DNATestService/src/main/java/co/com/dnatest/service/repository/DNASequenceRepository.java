@@ -8,5 +8,5 @@ import co.com.dnatest.service.model.DNASequence;
 @Repository
 public interface DNASequenceRepository extends MongoRepository<DNASequence, String>{
 
-	public DNASequence findByIsMutant();
+	public DNASequence findByDna(String[] dna);
 }

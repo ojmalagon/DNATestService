@@ -34,8 +34,8 @@ public class DNATestService implements IDNATestService{
 	}
 	
 	@Override
-	public DNASequence create(String[] dnaSequence, Boolean isMutant) {
-		return dnaSequenceRepository.save(new DNASequence(dnaSequence,isMutant));
+	public DNASequence create(String[] dna, Boolean isMutant) {
+		return dnaSequenceRepository.save(new DNASequence(dna,isMutant));
 	}
 
 	@Override
@@ -67,6 +67,11 @@ public class DNATestService implements IDNATestService{
 
 		return true;
 
+	}
+
+	@Override
+	public DNASequence getByDna(String[] dna) {
+		return dnaSequenceRepository.findByDna(dna);
 	}
 
 }
