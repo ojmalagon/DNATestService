@@ -1,0 +1,14 @@
+package co.com.dnatest.service;
+
+import java.util.List;
+
+import co.com.dnatest.service.model.DNASequence;
+
+public interface IDNATestService {
+
+	Boolean isMutant(String[] dna);
+	
+	DNASequence create(String[] dnaSequence, Boolean isMutant);
+	
+	List<DNASequence> getAll();
+}
