@@ -1,5 +1,6 @@
 package co.com.dnatest.service.test;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -74,23 +75,52 @@ public class DNASequenceUT {
 		 
 		assertTrue(charValue == preiousCharValue);
 	}
-	/*@Test
-	public void testGetCharValue(int i, int j){
-	
+	@Test
+	public void testGetCharValue(){
+		currentDNASequence = new DNASequence(dnaStringSequence2,false);
+		Iterator iterator;
+		iterator = currentDNASequence.iterator();
+		char charValue = (char)iterator.getCharValue(4, 4);
+		assertTrue(charValue == 'T');
 	}
 	@Test
 	public void testHasNextChar(){
-	
+		currentDNASequence = new DNASequence(dnaStringSequence2,false);
+		Iterator iterator;
+		iterator = currentDNASequence.iterator();
+		
+		while(iterator.hasNextChar()) {
+			iterator.nextCharHorizontal();
+		}
+		
+		assertFalse(iterator.hasNextChar());
 	}
 	@Test
 	public void testHasPreviousChar(){
 	
+		currentDNASequence = new DNASequence(dnaStringSequence2,false);
+		Iterator iterator;
+		iterator = currentDNASequence.iterator();
+		//char charValue = (char)iterator.previousChar();
+		assertFalse(iterator.hasPreviousChar());
 	}
 	@Test
 	public void testHasNextCharOblique(){
 	
+		currentDNASequence = new DNASequence(dnaStringSequence2,false);
+		Iterator iterator;
+		iterator = currentDNASequence.iterator();
+		
+		int count=0;
+		while(iterator.hasNextCharOblique() && count <=15) {
+			
+			iterator.nextCharOblique();
+			count++;
+		}
+		
+		assertFalse(iterator.hasNextCharOblique());
 	}
-	@Test
+	/*@Test
 	public void testHasPreviousCharOblique(){
 	
 	}

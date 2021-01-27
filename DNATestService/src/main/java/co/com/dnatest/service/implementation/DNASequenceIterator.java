@@ -234,7 +234,7 @@ public class DNASequenceIterator implements Iterator {
 
 	@Override
 	public Boolean hasPreviousChar() {
-		return !((this.indexI > 0) && (this.indexJ > 0));
+		return ((this.indexI > 0) || (this.indexJ > 0));
 	}
 
 	@Override
