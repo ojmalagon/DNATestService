@@ -7,7 +7,7 @@ Evalua una secuencia de ADN para saber si es o no mutante e incluye estadística
 <p>Pasos para la ejecuci&oacute;n</p>
 <ol>
 <li>Clonar el repositorio <a href="https://github.com/ojmalagon/DNATestService.git">https://github.com/ojmalagon/DNATestService.git</a></li>
-<li>Importar el proyecto DNATestService/DNATestService</li>
+<li>Importar el proyecto DNATestService/DNATestService en eclipse</li>
 <li>Esperar que se descarguen todas las dependencias y librer&iacute;as.</li>
 <li>Configurar o verificar la conexi&oacute;n a la BD MongoDB, a trav&eacute;s del archivo application.properties (debe estar disponible para tr&aacute;fico el puerto 27017).</li>
 <li>Ejecutarlo: hacer clic derecho sobre el proyecto y seleccionar &ldquo;Run AS/Spring Boot App&rdquo;</li>
