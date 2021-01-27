@@ -20,15 +20,13 @@ public class DNASequenceController {
 	@Autowired
 	private DNATestService dnaTestService;
 	
-	@PostMapping("/isMutant")
+	@PostMapping("/mutant/")
 	public ResponseEntity isMutant(@RequestBody DNASequence obj) {
 		try {
 			Boolean result=false;
 			if(dnaTestService.isMutant(obj.getDNA())) {
 				result=true;
-				
 			}
-			
 			obj.setIsMutant(result);
 			if(dnaTestService.getByDna(obj.getDNA())==null) {//Se valida para registrar solo una vez la secuencia de ADN evaluada.
 				dnaTestService.create(obj.getDNA(), obj.getIsMutant());

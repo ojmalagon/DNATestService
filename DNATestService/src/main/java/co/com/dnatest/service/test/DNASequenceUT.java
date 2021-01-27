@@ -2,7 +2,7 @@ package co.com.dnatest.service.test;
 
 import static org.junit.Assert.assertTrue;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import co.com.dnatest.service.Iterator;
 import co.com.dnatest.service.model.DNASequence;
